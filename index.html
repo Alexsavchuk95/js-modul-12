@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./build/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" class="form">
+            <input class="name" type="text" placeholder="Имя закладки">
+            <input class="url" type="url" placeholder="URL закладки">
+            <button class="btn" type="submit">Добавить закладку</button>
+        </form>
+
+
+        <template id="url-cards">
+            {{#each this}}
+            <li class="list-item">
+                <h2 class="name">Имя закладки:<span class="name-weight">{{name}}</span> </h2>
+                <p class="adress">URL: <a href="{{url}}">{{url}}</a></p>
+                <button class="delete" data-action="del">Удалить</button>
+            </li>
+            {{/each}}
+        </template>
+
+        <ul class="list"></ul>
+        <div class="modal modal-hidden modal-remove"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+
+    <script src="./build/js/script.js"></script>
+</body>
+
+</html>
